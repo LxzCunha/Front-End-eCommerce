@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MecanStore - Produtos</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <header>
+        <div class="container cabecalho">
+            <h1>MecanStore</h1>
+
+            <nav>
+                <ul class="menu">
+                    <li><a class="menu-link" href="index.html">Início</a></li>
+                    <li><a class="menu-link" href="sobre.html">Sobre</a></li>
+                    <li><a class="menu-link" href="produtos.html">Produtos</a></li>
+                    <li><a class="menu-link" href="cadastro.html">Cadastro</a></li>
+                    <li><a class="menu-link" href="carrinho.html">Meu Carrinho <span class="contador-carrinho">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pagina-produtos">
+        <section class="secao-catalogo">
+            <div class="container-produtos">
+                <div class="barra-catalogo">
+                    <div class="campo-busca">
+                        <label for="busca-produto">Buscar produto</label>
+                        <input id="busca-produto" type="text" placeholder="Digite nome ou código">
+                    </div>
+                </div>
+
+                <div id="lista-produtos" class="grade-produtos">
+                    <!-- Os cards são criados pelo JavaScript usando createElement e appendChild. -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 MecanStore - Trabalho Acadêmico. Desenvolvido por Alexandre Breus da Cunha e Leonardo Michaki.</p>
+        </div>
+    </footer>
+
+    <script src="js/principal.js"></script>
+    <script src="js/dados-produtos.js"></script>
+    <script src="js/produtos.js"></script>
+</body>
+</html>

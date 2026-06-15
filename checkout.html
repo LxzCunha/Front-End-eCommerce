@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MecanStore - Finalizar Pedido</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <header>
+        <div class="container cabecalho">
+            <h1>MecanStore</h1>
+
+            <nav>
+                <ul class="menu">
+                    <li><a class="menu-link" href="index.html">Início</a></li>
+                    <li><a class="menu-link" href="sobre.html">Sobre</a></li>
+                    <li><a class="menu-link" href="produtos.html">Produtos</a></li>
+                    <li><a class="menu-link" href="cadastro.html">Cadastro</a></li>
+                    <li><a class="menu-link" href="carrinho.html">Meu Carrinho <span class="contador-carrinho">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container pagina-conteudo">
+            <h2>Finalizar pedido</h2>
+            <p>Confira o resumo do carrinho e escolha a forma de pagamento.</p>
+
+            <div class="resumo-checkout">
+                <h3>Resumo do pedido</h3>
+                <p>Cliente: <strong id="cliente-resumo">Nenhum cliente cadastrado</strong></p>
+                <p>Itens no carrinho: <strong id="quantidade-resumo">0</strong></p>
+                <p>Total: <strong id="total-resumo">R$ 0,00</strong></p>
+                <a class="botao botao-secundario botao-menor" href="cadastro.html">Cadastrar cliente</a>
+            </div>
+
+            <ul id="mensagens-erro"></ul>
+
+            <form id="form-pedido">
+                <div class="grupo-campo">
+                    <label for="pagamento">Forma de pagamento:</label>
+                    <select id="pagamento" name="pagamento">
+                        <option value="">Selecione...</option>
+                        <option value="PIX">Pix</option>
+                        <option value="CARTAO">Cartão de crédito</option>
+                        <option value="BOLETO">Boleto bancário</option>
+                    </select>
+                </div>
+
+                <button id="btn-finalizar" class="botao botao-principal botao-formulario" type="submit">Finalizar pedido</button>
+            </form>
+
+            <div id="mensagem-sucesso" class="invisivel">
+                <h3>Pedido confirmado com sucesso!</h3>
+                <p>Status: <strong id="status-pedido">AGUARDANDO_PAGAMENTO</strong></p>
+                <p>Os dados foram validados e o pagamento aprovado.</p>
+                <a class="botao botao-secundario" href="produtos.html">Voltar aos produtos</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 MecanStore - Trabalho Acadêmico. Desenvolvido por Alexandre Breus da Cunha e Leonardo Michaki.</p>
+        </div>
+    </footer>
+
+    <script src="js/principal.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
