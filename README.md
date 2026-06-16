@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Desenvolver um site acadêmico usando apenas HTML, CSS e JavaScript puro. O projeto simula uma loja de motores estacionários com catálogo de produtos, carrinho de compras e formulário de finalização de pedido.
+Desenvolver um site acadêmico para a disciplina de Desenvolvimento Front-End do curso de Engenharia de Software da UniSenai-PR usando apenas HTML, CSS e JavaScript puro. O projeto simula uma loja de motores estacionários com catálogo de produtos, carrinho de compras e formulário de finalização de pedido.
 
 ## Tecnologias utilizadas
 
@@ -60,14 +60,15 @@ mecanstore_refeito/
     └── produtos/
 ```
 
-## Integrante
+## Integrantes
 
 Leonardo Michaki
+Alexandre Cunha
 
 ## Link do GitHub Pages
 
 Coloque aqui o link após publicar:
 
 ```text
-https://seu-usuario.github.io/nome-do-repositorio/
+https://lxzcunha.github.io/FrontEndeCommerce/
 ```
