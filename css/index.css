@@ -508,12 +508,23 @@ th {
 }
 
 .grupo-campo input,
-.grupo-campo select {
+.grupo-campo select,
+.grupo-campo textarea {
     width: 100%;
     padding: 0.8em;
     border: 1px solid #cccccc;
     border-radius: 6px;
     font-size: 1em;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.titulo-secao-form {
+    color: #232f3e;
+    font-size: 1.2em;
+    margin: 24px 0 12px 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #dddddd;
 }
 
 .campo-invalido {

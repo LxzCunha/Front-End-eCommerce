@@ -4,6 +4,11 @@
 
 Desenvolver um site acadêmico para a disciplina de Desenvolvimento Front-End do curso de Engenharia de Software da UniSenai-PR usando apenas HTML, CSS e JavaScript puro. O projeto simula uma loja de motores estacionários com catálogo de produtos, carrinho de compras e formulário de finalização de pedido.
 
+## Integrantes
+
+- Leonardo Michaki
+- Alexandre Cunha
+
 ## Tecnologias utilizadas
 
 - HTML5
@@ -19,6 +24,7 @@ Desenvolver um site acadêmico para a disciplina de Desenvolvimento Front-End do
 - `produtos.html`: catálogo de motores em formato de cards, baseado no layout de referência.
 - `carrinho.html`: carrinho de compras com tabela criada dinamicamente pelo JavaScript.
 - `checkout.html`: formulário de dados do cliente, validação e mensagem de sucesso.
+- `contat.html`: formulário que recebe dados de contato do cliente e retorna uma mensagem de sucesso.
 
 ## Funcionalidades implementadas
 
@@ -45,6 +51,7 @@ mecanstore_refeito/
 ├── produtos.html
 ├── carrinho.html
 ├── checkout.html
+|── contato.html
 ├── README.md
 ├── favicon.ico
 ├── css/
@@ -56,19 +63,15 @@ mecanstore_refeito/
 │   ├── produtos.js
 │   ├── carrinho.js
 │   └── checkout.js
+|   └── contato.js
 └── img/
     └── produtos/
 ```
-
-## Integrantes
-
-Leonardo Michaki
-Alexandre Cunha
 
 ## Link do GitHub Pages
 
 Coloque aqui o link após publicar:
 
 ```text
-https://lxzcunha.github.io/FrontEndeCommerce/
+https://lxzcunha.github.io/Front-End-eCommerce/
 ```
