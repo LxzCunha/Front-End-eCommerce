@@ -45,7 +45,7 @@ Desenvolver um site acadêmico para a disciplina de Desenvolvimento Front-End do
 ## Organização de arquivos
 
 ```text
-mecanstore_refeito/
+mecanstore/
 ├── index.html
 ├── sobre.html
 ├── produtos.html
@@ -69,8 +69,6 @@ mecanstore_refeito/
 ```
 
 ## Link do GitHub Pages
-
-Coloque aqui o link após publicar:
 
 ```text
 https://lxzcunha.github.io/Front-End-eCommerce/
