@@ -133,9 +133,6 @@ footer {
     margin-top: 24px;
 }
 
-/* ==========================================
-   PÁGINA INICIAL
-   ========================================== */
 .secao-home {
     background-color: #232f3e;
     color: #ffffff;
@@ -221,9 +218,7 @@ footer {
     margin-bottom: 8px;
 }
 
-/* ==========================================
-   PÁGINAS DE CONTEÚDO
-   ========================================== */
+
 .pagina-conteudo {
     background-color: #ffffff;
     margin-top: 28px;
@@ -237,9 +232,7 @@ footer {
     font-size: 1.05em;
 }
 
-/* ==========================================
-   PÁGINA DE PRODUTOS - VISUAL IGUAL AO PRINT
-   ========================================== */
+
 .pagina-produtos {
     background-color: #ffffff;
 }
@@ -388,10 +381,6 @@ footer {
     margin: 0 8px 14px 8px;
 }
 
-/* ==========================================
-   TABELA DO CARRINHO
-   Inspirada na tabela do exemplo de aula.
-   ========================================== */
 table {
     width: 100%;
     margin-bottom: 1.5em;
@@ -473,10 +462,6 @@ th {
     color: #ffffff;
 }
 
-/* ==========================================
-   FORMULÁRIO E VALIDAÇÃO
-   Baseado no conceito de campo-invalido das aulas.
-   ========================================== */
 .resumo-checkout {
     background-color: #f3f6fa;
     border: 1px solid #d6dde7;
@@ -574,9 +559,6 @@ th {
     display: none !important;
 }
 
-/* ==========================================
-   RESPONSIVIDADE - MEDIA QUERIES
-   ========================================== */
 @media screen and (max-width: 1400px) {
     .grade-produtos {
         grid-template-columns: repeat(4, 1fr);
