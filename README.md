@@ -20,7 +20,7 @@ persistir clientes e pedidos em banco e aplicar regras de negócio no servidor.
 - Fetch API + Promises para comunicação HTTP
 - LocalStorage do navegador (carrinho e sessão do cliente)
 
-### Back-end (projeto `ecommerce-api`)
+### Back-end (projeto `api-ecommerce`)
 - Java 17
 - Spring Boot 3.4 (Web, Data JPA, Validation)
 - Hibernate / JPA
