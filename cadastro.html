@@ -45,14 +45,34 @@
                     <input id="email" name="email" type="text" placeholder="seuemail@provedor.com">
                 </div>
 
+                 <div class="grupo-campo">
+                    <label for="cpf">CPF:</label>
+                    <input id="cpf" name="cpf" type="text" placeholder="000.000.000-00">
+                </div>
+
                 <div class="grupo-campo">
                     <label for="telefone">Telefone:</label>
                     <input id="telefone" name="telefone" type="text" placeholder="(00) 00000-0000">
                 </div>
-
+               
                 <div class="grupo-campo">
                     <label for="cidade">Cidade:</label>
                     <input id="cidade" name="cidade" type="text" placeholder="Digite sua cidade">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="logradouro">Endereço (rua e número):</label>
+                    <input id="logradouro" name="logradouro" type="text" placeholder="Rua Exemplo, 123">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="bairro">Bairro:</label>
+                    <input id="bairro" name="bairro" type="text" placeholder="Digite seu bairro">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="uf">UF:</label>
+                    <input id="uf" name="uf" type="text" maxlength="2" placeholder="PR">
                 </div>
 
                 <div class="grupo-campo">
@@ -60,7 +80,7 @@
                     <input id="cep" name="cep" type="text" placeholder="00000-000">
                 </div>
 
-                <button class="botao botao-principal botao-formulario" type="submit">Salvar cadastro</button>
+                <button id="btn-salvar-cadastro" class="botao botao-principal botao-formulario" type="submit">Salvar cadastro</button>
             </form>
 
             <div id="mensagem-sucesso" class="invisivel">
@@ -76,7 +96,7 @@
             <p>&copy; 2026 MecanStore - Trabalho Acadêmico. Desenvolvido por Alexandre Breus da Cunha e Leonardo Michaki.</p>
         </div>
     </footer>
-
+    <script src="js/api.js"></script>
     <script src="js/principal.js"></script>
     <script src="js/cadastro.js"></script>
 </body>

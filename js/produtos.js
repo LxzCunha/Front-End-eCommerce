@@ -1,5 +1,27 @@
 var listaProdutos = document.querySelector("#lista-produtos");
 var campoBusca = document.querySelector("#busca-produto");
+var produtos = [];
+
+function carregarProdutos() {
+    listaProdutos.innerHTML = "";
+    var carregando = document.createElement("p");
+    carregando.classList.add("aviso-carrinho");
+    carregando.textContent = "Carregando produtos...";
+    listaProdutos.appendChild(carregando);
+
+    chamarApi("/produtos")
+        .then(function (dados) {
+            produtos = dados;
+            renderizarProdutos(produtos);
+        })
+        .catch(function (erro) {
+            listaProdutos.innerHTML = "";
+            var aviso = document.createElement("p");
+            aviso.classList.add("aviso-carrinho");
+            aviso.textContent = "Não foi possível carregar os produtos: " + erro.message;
+            listaProdutos.appendChild(aviso);
+        });
+}
 
 function renderizarProdutos(lista) {
     listaProdutos.innerHTML = "";
@@ -13,8 +35,7 @@ function renderizarProdutos(lista) {
     }
 
     for (var i = 0; i < lista.length; i++) {
-        var card = criarCardProduto(lista[i]);
-        listaProdutos.appendChild(card);
+        listaProdutos.appendChild(criarCardProduto(lista[i]));
     }
 }
 
@@ -49,11 +70,18 @@ function criarCardProduto(produto) {
     var campoQuantidade = document.createElement("input");
     campoQuantidade.type = "number";
     campoQuantidade.min = "1";
+    campoQuantidade.max = produto.estoque;
     campoQuantidade.value = "1";
 
     var botaoAdicionar = document.createElement("button");
     botaoAdicionar.classList.add("botao-adicionar-card");
     botaoAdicionar.textContent = "Adicionar ao carrinho";
+
+    if (produto.estoque === 0) {
+        botaoAdicionar.disabled = true;
+        botaoAdicionar.textContent = "Sem estoque";
+        campoQuantidade.disabled = true;
+    }
 
     areaImagem.appendChild(imagem);
     quantidadeArea.appendChild(labelQuantidade);
@@ -73,6 +101,10 @@ function criarCardProduto(produto) {
             quantidade = 1;
             campoQuantidade.value = "1";
         }
+        if (quantidade > produto.estoque) {
+            quantidade = produto.estoque;
+            campoQuantidade.value = String(produto.estoque);
+        }
 
         adicionarProdutoAoCarrinho(produto, quantidade);
         mostrarMensagemCatalogo(quantidade + " unidade(s) de " + produto.nome + " adicionada(s) ao carrinho.");
@@ -87,7 +119,7 @@ function filtrarProdutos() {
 
     for (var i = 0; i < produtos.length; i++) {
         var nome = produtos[i].nome.toLowerCase();
-        var codigo = produtos[i].codigo.toLowerCase();
+        var codigo = String(produtos[i].codigo).toLowerCase();
 
         if (nome.indexOf(textoBusca) !== -1 || codigo.indexOf(textoBusca) !== -1) {
             produtosFiltrados.push(produtos[i]);
@@ -99,10 +131,7 @@ function filtrarProdutos() {
 
 function mostrarMensagemCatalogo(texto) {
     var mensagemAntiga = document.querySelector(".mensagem-catalogo");
-
-    if (mensagemAntiga) {
-        mensagemAntiga.remove();
-    }
+    if (mensagemAntiga) { mensagemAntiga.remove(); }
 
     var mensagem = document.createElement("p");
     mensagem.classList.add("mensagem-catalogo");
@@ -111,10 +140,8 @@ function mostrarMensagemCatalogo(texto) {
     var container = document.querySelector(".container-produtos");
     container.insertBefore(mensagem, listaProdutos);
 
-    setTimeout(function () {
-        mensagem.classList.add("invisivel");
-    }, 2500);
+    setTimeout(function () { mensagem.classList.add("invisivel"); }, 2500);
 }
 
 campoBusca.addEventListener("input", filtrarProdutos);
-renderizarProdutos(produtos);
+carregarProdutos();

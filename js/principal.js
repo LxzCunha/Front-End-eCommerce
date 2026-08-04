@@ -21,7 +21,7 @@ function salvarCarrinho(carrinho) {
 }
 
 function limparCarrinho() {
-    localStorage.removeItem(CHAVE_CARRINHO);so
+    localStorage.removeItem(CHAVE_CARRINHO);
     atualizarContadorCarrinho();
 }
 
@@ -45,27 +45,24 @@ function salvarCliente(cliente) {
 
 function clienteCadastrado() {
     var cliente = obterCliente();
-    return cliente !== null && cliente.nome && cliente.email;
+    return cliente !== null && !!cliente.id && !!cliente.nome;
 }
 
 function adicionarProdutoAoCarrinho(produto, quantidade) {
     var carrinho = obterCarrinho();
     var produtoExistente = null;
 
-    if (!quantidade || quantidade < 1) {
-        quantidade = 1;
-    }
+    if (!quantidade || quantidade < 1) { quantidade = 1; }
 
     for (var i = 0; i < carrinho.length; i++) {
-        if (carrinho[i].codigo === produto.codigo) {
-            produtoExistente = carrinho[i];
-        }
+        if (carrinho[i].id === produto.id) { produtoExistente = carrinho[i]; }
     }
 
     if (produtoExistente) {
         produtoExistente.quantidade = produtoExistente.quantidade + quantidade;
     } else {
         carrinho.push({
+            id: produto.id,
             codigo: produto.codigo,
             nome: produto.nome,
             preco: produto.preco,
@@ -77,30 +74,24 @@ function adicionarProdutoAoCarrinho(produto, quantidade) {
     salvarCarrinho(carrinho);
 }
 
-function removerProdutoDoCarrinho(codigo) {
+function removerProdutoDoCarrinho(id) {
     var carrinho = obterCarrinho();
     var novoCarrinho = [];
 
     for (var i = 0; i < carrinho.length; i++) {
-        if (carrinho[i].codigo !== codigo) {
-            novoCarrinho.push(carrinho[i]);
-        }
+        if (carrinho[i].id !== id) { novoCarrinho.push(carrinho[i]); }
     }
 
     salvarCarrinho(novoCarrinho);
 }
 
-function alterarQuantidadeProduto(codigo, alteracao) {
+function alterarQuantidadeProduto(id, alteracao) {
     var carrinho = obterCarrinho();
 
     for (var i = 0; i < carrinho.length; i++) {
-        if (carrinho[i].codigo === codigo) {
+        if (carrinho[i].id === id) {
             carrinho[i].quantidade = carrinho[i].quantidade + alteracao;
-
-            if (carrinho[i].quantidade <= 0) {
-                carrinho.splice(i, 1);
-            }
-
+            if (carrinho[i].quantidade <= 0) { carrinho.splice(i, 1); }
             break;
         }
     }
@@ -131,10 +122,7 @@ function contarItensCarrinho() {
 }
 
 function formatarMoeda(valor) {
-    return valor.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-    });
+    return Number(valor).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
 function atualizarContadorCarrinho() {

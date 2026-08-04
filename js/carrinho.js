@@ -84,17 +84,17 @@ function criarLinhaCarrinho(item) {
     itemTr.appendChild(acoesTd);
 
     botaoMenos.addEventListener("click", function () {
-        alterarQuantidadeProduto(item.codigo, -1);
+        alterarQuantidadeProduto(item.id, -1);
         atualizarTabelaInterface();
     });
 
     botaoMais.addEventListener("click", function () {
-        alterarQuantidadeProduto(item.codigo, 1);
+        alterarQuantidadeProduto(item.id, 1);
         atualizarTabelaInterface();
     });
 
     btnRemover.addEventListener("click", function () {
-        removerProdutoDoCarrinho(item.codigo);
+        removerProdutoDoCarrinho(item.id);
         atualizarTabelaInterface();
     });
 

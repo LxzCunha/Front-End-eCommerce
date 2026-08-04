@@ -49,8 +49,33 @@
                         <option value="">Selecione...</option>
                         <option value="PIX">Pix</option>
                         <option value="CARTAO">Cartão de crédito</option>
-                        <option value="BOLETO">Boleto bancário</option>
                     </select>
+                </div>
+
+                <div id="campos-cartao" class="invisivel">
+                    <div class="grupo-campo">
+                        <label for="numeroCartao">Número do cartão (16 dígitos):</label>
+                        <input id="numeroCartao" name="numeroCartao" type="text" placeholder="0000 0000 0000 0000">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="validade">Validade:</label>
+                        <input id="validade" name="validade" type="text" placeholder="12/2030">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="cvv">CVV:</label>
+                        <input id="cvv" name="cvv" type="text" placeholder="123">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="parcelas">Parcelas:</label>
+                        <input id="parcelas" name="parcelas" type="number" min="1" max="12" value="1">
+                    </div>
+                </div>
+
+                <div id="campos-pix" class="invisivel">
+                    <div class="grupo-campo">
+                        <label for="chavePix">Chave Pix:</label>
+                        <input id="chavePix" name="chavePix" type="text" placeholder="e-mail, CPF ou telefone">
+                    </div>
                 </div>
 
                 <button id="btn-finalizar" class="botao botao-principal botao-formulario" type="submit">Finalizar pedido</button>
@@ -70,7 +95,7 @@
             <p>&copy; 2026 MecanStore - Trabalho Acadêmico. Desenvolvido por Alexandre Breus da Cunha e Leonardo Michaki.</p>
         </div>
     </footer>
-
+    <script src="js/api.js"></script>
     <script src="js/principal.js"></script>
     <script src="js/checkout.js"></script>
 </body>
