@@ -11,11 +11,6 @@ em arquivo e `localStorage`. Na versão atual o front-end foi **integrado a uma 
 própria** (`ecommerce-api`, em Java com Spring Boot), passando a consumir dados reais,
 persistir clientes e pedidos em banco e aplicar regras de negócio no servidor.
 
-## Integrantes
-
-- Leonardo Michaki
-- Alexandre Cunha
-
 ## Tecnologias utilizadas
 
 ### Front-end
